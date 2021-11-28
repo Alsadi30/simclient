@@ -15,13 +15,13 @@ const loginReducer =(state=init,action) =>{
                 user: action.payload.user,
                 isAuthenticated:Object.keys(action.payload.user).length > 0?true:false,
                 error: {},
-                isLoding:false
+                isLoading:false
             }
         }
         case Types.USER_ERROR : {
             return {
                 ...state,
-                error: action.payload.error
+                error: action.payload
             }
         }
         default: return state

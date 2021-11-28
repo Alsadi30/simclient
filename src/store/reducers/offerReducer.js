@@ -2,20 +2,20 @@ import Types from '../actions/type'
 
 
 const init ={
-   allSim:[],
+   offers:[],
     error: {},
     isLoading:true
 }
  const simReducer =(state=init,action) =>{
     switch(action.type){
-        case Types.GET_SIM :{
+        case Types.SET_OFFER :{
             return {
-                allSim: action.payload.allSim,
+                offers: action.payload.offers,
                 error: {},
                 isLoading:false
             }
         }
-        case Types.SIM_ERROR : {
+        case Types.OFFER_ERROR : {
             return {
                 ...state,
                 error: action.payload.error

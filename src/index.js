@@ -7,6 +7,12 @@ import {Provider} from 'react-redux'
 import setAuthToken from './utils/setAuthToken'
 import jwtDecode from 'jwt-decode'
 import Types from './store/actions/type'
+import './assets/styles/style.css';
+import { BrowserRouter } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const token = localStorage.getItem('auth_token')
@@ -27,13 +33,14 @@ if(token){
 
 
 ReactDOM.render(
-
+  <BrowserRouter>
   <Provider store={store}>
-  <React.StrictMode>
-   <App />
+   <React.StrictMode>
+       <ToastContainer/>
+       <App />
    </React.StrictMode>
- </Provider>,
-
+ </Provider>
+ </BrowserRouter>,
   document.getElementById('root')
 );
 
@@ -46,4 +53,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-

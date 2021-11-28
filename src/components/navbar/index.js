@@ -4,10 +4,10 @@ import { Outlet } from "react-router-dom"
 const Navbar = () => {
     
     return (
-        <div>
-            <NavItem itemnames={['Dashboard', "Orders","Sim Card" , "Report" , "User" ]} />
+        <>
+            <NavItem itemnames={['Dashboard', 'Sim In Stock' ,"Add Order","All Sim Card" ,'Sold Sim' , "Report" , "User" ]} />
             <Outlet/>
-        </div>
+        </>
     )
 }
 

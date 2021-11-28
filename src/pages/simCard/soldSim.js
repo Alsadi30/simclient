@@ -1,0 +1,52 @@
+import {useSelector} from 'react-redux'
+import RowAllSim from './rowAllSim'
+
+
+
+const SoldSimCard = () => {
+    
+    const {allSim,isLoading} = useSelector(state=> state.simReducer)
+
+
+    
+let filSim = allSim.filter(sim=>sim.saleStatus===true)
+
+    return (
+    
+        <div class="dash">
+            <h3 className='dashboard-title'>Sold Sims </h3>
+            <table  className='table-1'>
+            <thead className='table__thead'>
+				<tr>
+					<th className='tb-head'>Operator Name</th>
+					<th className='tb-head'>Sim Number</th>
+					<th className='tb-head'>Sim ICCID</th>
+                        <th className='tb-head'>Sale Status</th>
+                        <th className='tb-head'>Activation Status</th>
+                        <th className='tb-head'>Sold At</th>
+                        <th className='tb-head'>Cost</th>
+                        <th className='tb-head'>Approved At </th>
+                        <th className='tb-head'>Activation Date</th>
+                        <th className='tb-head'>Ordered At</th>
+                        
+                       
+				</tr>
+                </thead>
+                <tbody>
+                        { !isLoading && filSim.reverse().map(sim =>
+                        {
+                            return (
+                         
+                                <RowAllSim sim={sim} />
+                            )
+                        })}
+                        </tbody>
+            </table>
+                       
+                    
+        </div>     
+    )
+}
+
+
+export default SoldSimCard

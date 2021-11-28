@@ -1,11 +1,11 @@
 import axios from 'axios'
 import Types from './type'
 import URL from '../serverUrl'
-
+import {  toast } from 'react-toastify'; 
 
 
 export const getAllSim = () => (dispatch) => {
-    axios.get(`http://localhost:5000/api/sim`)
+    axios.get(`${URL}/sim`)
         .then(res => {
           dispatch({
             type: Types.GET_SIM,
@@ -28,19 +28,22 @@ export const getAllSim = () => (dispatch) => {
 
 export const addAttachment = (id,formData, navigate) => (dispatch) => {
   
-  axios.post(`http://localhost:5000/api/attachment/${id}`,formData)
+  axios.post(`${URL}/attachment/${id}`,formData)
     .then(res => {
-          console.log(res.data)
-          // dispatch({
-            
-          // })
-      navigate('/simcard')
+          toast.success("Attachment Added Successfully !", {
+            position: toast.POSITION.TOP_CENTER,
+            theme: "colored"
+        });
+       
+     
         })
     .catch(e => {
-          console.log(e)
-          // dispatch({
           
-          // })
+          toast.error(`${e.message}`, {
+            position: toast.POSITION.TOP_CENTER,
+            theme: "colored"
+        })
+    
           
        })
 

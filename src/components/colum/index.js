@@ -1,9 +1,8 @@
 
 
-
-const Col = ({val,num}) => {
+const Col = ({val}) => {
     return (
-        <td className={`col-${num}`}>{val}</td>
+        <td className='col'>{val}</td>
     )
 }
 
