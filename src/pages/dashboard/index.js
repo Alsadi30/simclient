@@ -41,7 +41,9 @@ const Dashboard = () => {
 
 let filSim = allSim.filter(sim=>sim.saleStatus===true)
 
- 
+ let sortedSoldSim = filSim.sort((a,b) => {
+    return new Date(b.soldAt) - new Date(a.soldAt)
+  }) 
 
     return (
         
@@ -65,7 +67,7 @@ let filSim = allSim.filter(sim=>sim.saleStatus===true)
                         </tr>
                     </thead>
                     <tbody>
-                    {isLoading ? <div className='loading' ><ReactLoading className='loading' type='bubbles' color='#2C3E50' height={60} width={60} /></div> : filSim.reverse().map(sim => {
+                    {isLoading ? <div className='loading' ><ReactLoading className='loading' type='bubbles' color='#2C3E50' height={60} width={60} /></div> : sortedSoldSim.map(sim => {
                             return (
                          
                                 <MySim key={sim.id} sim={sim} />

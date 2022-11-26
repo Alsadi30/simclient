@@ -11,6 +11,10 @@ const SoldSimCard = () => {
     
 let filSim = allSim.filter(sim=>sim.saleStatus===true)
 
+  let sortedSoldSim = filSim.sort((a,b) => {
+    return new Date(b.soldAt) - new Date(a.soldAt)
+  })
+
     return (
     
         <div class="dash">
@@ -33,7 +37,7 @@ let filSim = allSim.filter(sim=>sim.saleStatus===true)
 				</tr>
                 </thead>
                 <tbody>
-                        { !isLoading && filSim.reverse().map(sim =>
+                        { !isLoading && sortedSoldSim.map(sim =>
                         {
                             return (
                          

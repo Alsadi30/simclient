@@ -8,7 +8,13 @@ const MySim = ({ sim }) => {
     return (
         <>        
        
-       <tr bgcolor={sim.operatorName==='Vodafone'?'#FF0000':sim.operatorName==="Wind"?'orange':'white'} className='table-raw' style={{color:sim.operatorName==='Very'?'black':'white'}} >  
+       <tr bgcolor={sim.operatorName === 'Vodafone'
+            ? '#FF0000'
+            : sim.operatorName === 'Wind'
+            ? 'orange'
+            : sim.operatorName === 'Kena'
+            ? 'orange'
+            : 'white'} className='table-raw' style={{color:sim.operatorName==='Very'?'black':'white'}} >  
                         
                         <Col val={sim.operatorName} />
                         
@@ -16,7 +22,7 @@ const MySim = ({ sim }) => {
                         
                         <Col val={sim.ICCID} />
             
-                    <Col val={moment(sim.activatedAt).format('LL')} />
+                    <Col val={moment(sim.soldAt).format('LL')} />
 
                     <Col val={sim.approvalStatus?'Activated':'Not Activated'} />
 

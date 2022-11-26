@@ -48,6 +48,7 @@ const Report = () => {
                         <option value='Vodafone'>Vodafone</option>
                         <option value='Wind'>Wind</option>
                         <option value='Very'>Very</option>
+                         <option value='Kena'>Kena</option>
                     </select>
                 </div>
                 <div className='re-grp'>

@@ -3,6 +3,7 @@ import StockSimRow from './stockSimRow'
 import {useState,useEffect} from 'react'
 import ReactLoading from 'react-loading';
 import {getAllSim } from '../../store/actions/simAction'
+import { getOffer } from "../../store/actions/offerAction"
 
 
 
@@ -11,6 +12,7 @@ const SimInStock = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch(getOffer())
         dispatch(getAllSim())
     },[dispatch])
 

@@ -71,7 +71,7 @@ const AddAttachment = () => {
 
             <div className="form-group">
                     <label className="form-control"  htmlFor="Offer">Offer</label>
-                     <select className="form-control" name='Offer' class="form-select" aria-label="Operator" required onChange={handleChange}>
+                     <select className="form-control" name='Offer' class="form-select" aria-label="Operator"  onChange={handleChange}>
                          <option value=''  className="form-control"  >Select Offer</option>
                                     {   filterdOffer.map(offer=>
                                     <option value={offer.title}>{offer.title}</option> )}

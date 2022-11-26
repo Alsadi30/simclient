@@ -7,7 +7,13 @@ const StockSimRow = ({sim}) => {
     return (
         <>        
             
-            <tr bgcolor={sim.operatorName==='Vodafone'?'#FF0000':sim.operatorName==="Wind"?'orange':'white'} className='table-raw' style={{color:sim.operatorName==='Very'?'black':'white'}} >  
+            <tr bgcolor={ sim.operatorName === 'Vodafone'
+            ? '#FF0000'
+            : sim.operatorName === 'Wind'
+            ? 'orange'
+            : sim.operatorName === 'Kena'
+            ? 'orange'
+            : 'white' } className='table-raw' style={{color:sim.operatorName==='Very'?'black':'white'}} >  
 
                    <Col val={sim.operatorName} />
                     
