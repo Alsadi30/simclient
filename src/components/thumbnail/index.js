@@ -1,19 +1,25 @@
-import Call from '../../assets/img/Call.jpg'
-import thumbnail2 from '../../assets/img/thumbnail2.jpeg'
-import thumbnail3 from '../../assets/img/thumbnail3.jpeg'
-import thumbnail4 from '../../assets/img/thumbnail4.jpeg'
+import dash1 from '../../assets/img/dash1.png'
+import dash2 from '../../assets/img/dash2.png'
 
 const Thumbnail = () => {
-    
-    return (
-        <div className='thumbnails'>
-            <img className='thumbnail' src={Call} alt='offer' height='350px'  />
-            <img className='thumbnail' src={thumbnail2} alt='offer' height='350px'  />
-            <img className='thumbnail' src={thumbnail3} alt='offer' height='350px' />
-            <img className='thumbnail' src={thumbnail4} alt='offer' height='350px' width='255px'  />
-        </div>
-    )
+  return (
+    <div className='thumbnails'>
+      <img
+        className='thumbnail'
+        src={dash1}
+        alt='offer'
+        height='300px'
+        width='62%'
+      />
+      <img
+        className='thumbnail'
+        src={dash2}
+        alt='offer'
+        height='300px'
+        width='38%'
+      />
+    </div>
+  )
 }
-
 
 export default Thumbnail
